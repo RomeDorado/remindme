@@ -30,11 +30,36 @@ const wit = new Wit({
 	actions
 });
 
+//database
+const pg = require('pg');
+
+pg.defaults.ssl = true;
+
 // Register the webhooks
 server.get('/', (req, res, next) => {
 	f.registerHook(req, res);
 	return next();
 });
+
+pg.connect(process.env.DATABASE_URL, function(err, client){
+	if (err) throw err;
+	console.log("connected to postgre");
+	let rows = [];
+	client
+	.query(`SELECT id FROM testuser WHERE fb_id = '${fbid}' LIMIT 1 `)
+	.n('row', function (row) {
+		rows.push(row);
+	})
+	.on('end', () => {
+		if(rows.length === 0){
+			let sql = 'INSERT INTO testuser (fb_id, firstname)' + 'VALUES ($1, $2)';
+			client.query(sql, [
+				fbid, 
+				first_name	
+			])
+		}
+	})
+})
 
 agenda.on('ready', () => {
 
