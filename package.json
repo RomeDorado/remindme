@@ -1,15 +1,21 @@
 {
-  "name": "remindbot",
+  "name": "testmovie",
   "version": "1.0.0",
-  "description": "A Facebook Messenger Chatbot starter template that uses Wit.AI",
+  "description": "Movie bot",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "\"echo \\\"Error: no test specified\\\" &amp;&amp; exit 1\","
   },
-  "author": "Sachin Bhatnagar <mailme@sachinbhatnagar.com> (http://sachinbhatnagar.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomeDorado/trialmovie.git"
+  },
+  "author": "Rome Dorado",
   "license": "ISC",
   "engines": {
     "node": "8.0.0"
   },
+  "homepage": "https://github.com/RomeDorado/trialmovie#readme",
   "dependencies": {
     "agenda": "^0.9.1",
     "exact": "^0.8.0",
@@ -17,6 +23,10 @@
     "node-wit": "^4.0.0",
     "pg": "^6.2.4",
     "request": "^2.74.0",
-    "restify": "^4.1.1"
+    "restify": "^4.1.1",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.6",
+    "request": "^2.81.0"
   }
 }
