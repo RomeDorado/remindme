@@ -6,16 +6,11 @@
   "scripts": {
     "test": "\"echo \\\"Error: no test specified\\\" &amp;&amp; exit 1\","
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RomeDorado/trialmovie.git"
-  },
   "author": "Rome Dorado",
   "license": "ISC",
   "engines": {
     "node": "8.0.0"
   },
-  "homepage": "https://github.com/RomeDorado/trialmovie#readme",
   "dependencies": {
     "agenda": "^0.9.1",
     "exact": "^0.8.0",
